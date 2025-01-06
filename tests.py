@@ -36,7 +36,7 @@ class TestBooksCollector:
         assert collector.books_genre[name] == genre
 
 
-    # Проверяем получение жанра для книги, которая есть в коллекции
+    # Проверяем получение жанра для книги, которая есть в коллекции.
     def test_get_genre_existing_book(self):
         collector = BooksCollector()
         name = "Книга1"
