@@ -171,3 +171,24 @@ class TestBooksCollector:
 
         expected_favorite_result = [name1]
         assert result_favorite_books == expected_favorite_result
+
+
+        # Добавляем книгу с недопустимо длинным названием
+    def test_add_new_long_name_book(self):
+        collector = BooksCollector()
+        name1 = "Книга с названием больше сорока символов книга"
+
+        collector.add_new_book(name1)
+
+        assert len(collector.get_books_rating()) == 0
+
+
+        # Добавляем книгу 2 раза
+    def test_add_new_book_twice(self):
+        collector = BooksCollector()
+        name1 = "Книга1"
+
+        collector.add_new_book(name1)
+        collector.add_new_book(name1)
+
+        assert len(collector.get_books_rating()) == 1
